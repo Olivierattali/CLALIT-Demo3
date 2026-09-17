@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# FHIR Resources to extract from HIST_RPT message
+# FHIR Resources to extract from HIST_PAT message
 #
 
 ########################################################################
@@ -17,16 +17,13 @@ resources:
       resourcePath: resource/MessageHeader
       repeats: false
       isReferenced: false
-      additionalSegments: 
-        - EVN
-   
+
     - resourceName: Patient
       segment: PID
       resourcePath: resource/Patient
       repeats: false
       isReferenced: true
       additionalSegments:
-        - PD1
         - MSH
 
     # - resourceName: Condition

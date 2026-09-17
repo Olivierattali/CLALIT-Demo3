@@ -25,6 +25,7 @@ import java.util.Properties;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -97,6 +98,12 @@ public class Hl7MessageExtensionsTest {
       originalConfigHome = System.getProperty(CONF_PROP_HOME);
     }
   
+    @BeforeEach
+    public void clearCachedConfiguration() {
+      ConverterConfiguration.reset();
+      ResourceReader.reset();
+    }
+
     @AfterEach
     public void reset() {
       System.clearProperty(CONF_PROP_HOME);
