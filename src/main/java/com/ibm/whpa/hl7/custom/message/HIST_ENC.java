@@ -88,6 +88,7 @@ public class HIST_ENC extends AbstractMessage {
          this.add(MSH.class, true, false);
          this.add(PID.class, true, false);
          this.add(OBR.class, false, true);
+         this.add(RXE.class, false, true);
          this.add(DG1.class, false, true);
       } catch (HL7Exception e) {
          log.error("Unexpected error creating HIST_ENC - this is probably a bug in the source code generator.", e);
